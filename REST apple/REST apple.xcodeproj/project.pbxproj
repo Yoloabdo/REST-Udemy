@@ -10,6 +10,7 @@
 		B415C8191CB1675D00088FA8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C8181CB1675D00088FA8 /* APIManager.swift */; };
 		B415C81C1CB17F9E00088FA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C81B1CB17F9E00088FA8 /* Constants.swift */; };
 		B415C81E1CB1809F00088FA8 /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C81D1CB1809F00088FA8 /* MusicVideo.swift */; };
+		B415C8241CB1A90500088FA8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B415C8231CB1A90500088FA8 /* Reachability.m */; };
 		B451A64D1CAEBE3E00A37992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */; };
 		B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64E1CAEBE3E00A37992 /* ViewController.swift */; };
 		B451A6521CAEBE3E00A37992 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B451A6501CAEBE3E00A37992 /* Main.storyboard */; };
@@ -21,6 +22,9 @@
 		B415C8181CB1675D00088FA8 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		B415C81B1CB17F9E00088FA8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B415C81D1CB1809F00088FA8 /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
+		B415C8211CB1A90500088FA8 /* REST apple-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "REST apple-Bridging-Header.h"; sourceTree = "<group>"; };
+		B415C8221CB1A90500088FA8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		B415C8231CB1A90500088FA8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		B451A6491CAEBE3E00A37992 /* REST apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REST apple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B451A64E1CAEBE3E00A37992 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,16 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		B415C8251CB1A92800088FA8 /* Obj-C */ = {
+			isa = PBXGroup;
+			children = (
+				B415C8221CB1A90500088FA8 /* Reachability.h */,
+				B415C8231CB1A90500088FA8 /* Reachability.m */,
+				B415C8211CB1A90500088FA8 /* REST apple-Bridging-Header.h */,
+			);
+			name = "Obj-C";
+			sourceTree = "<group>";
+		};
 		B451A6401CAEBE3D00A37992 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +118,7 @@
 		B451A64B1CAEBE3E00A37992 /* REST apple */ = {
 			isa = PBXGroup;
 			children = (
+				B415C8251CB1A92800088FA8 /* Obj-C */,
 				B415C81A1CB17F8A00088FA8 /* Utils */,
 				B415C8171CB163F100088FA8 /* Supporting Files */,
 				B415C8161CB163D500088FA8 /* Views */,
@@ -189,6 +204,7 @@
 				B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */,
 				B415C81E1CB1809F00088FA8 /* MusicVideo.swift in Sources */,
 				B451A64D1CAEBE3E00A37992 /* AppDelegate.swift in Sources */,
+				B415C8241CB1A90500088FA8 /* Reachability.m in Sources */,
 				B415C81C1CB17F9E00088FA8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,11 +320,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "REST apple/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoloabdo.REST-apple";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "REST apple/REST apple-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -316,11 +335,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "REST apple/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoloabdo.REST-apple";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "REST apple/REST apple-Bridging-Header.h";
 			};
 			name = Release;
 		};
