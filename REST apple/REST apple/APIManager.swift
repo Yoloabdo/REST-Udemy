@@ -10,8 +10,11 @@ import Foundation
 class APIManager {
     func loadData(urlString: String, completion: (result: String) -> Void){
         
+        // setting cache to nill through setting instead of the delegate file
+        let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
+        let session = NSURLSession(configuration: config)
         
-        let session = NSURLSession.sharedSession()
+//        let session = NSURLSession.sharedSession()
         let url = NSURL(string: urlString)
         
         let task = session.dataTaskWithURL(url!) {
