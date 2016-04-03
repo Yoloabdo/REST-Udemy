@@ -18,9 +18,9 @@ class ViewController: UIViewController {
         api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=10/explicit=true/json", completion: didLoadData)
     }
 
-    func didLoadData(result: String) -> Void {
+    func didLoadData(results: [Videos]) -> Void {
         
-        let alert = UIAlertController(title: (result), message: nil, preferredStyle: .Alert)
+        let alert = UIAlertController(title: ("\(results.count)"), message: nil, preferredStyle: .Alert)
         
         let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
         

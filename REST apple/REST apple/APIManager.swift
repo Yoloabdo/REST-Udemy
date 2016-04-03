@@ -8,7 +8,9 @@
 
 import Foundation
 class APIManager {
-    func loadData(urlString: String, completion: (result: String) -> Void){
+    
+    
+    func loadData(urlString: String, completion: [Videos] -> Void) {
         
         // setting cache to nill through setting instead of the delegate file
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
@@ -21,30 +23,31 @@ class APIManager {
             (data, response, error) in
             
             if error != nil {
-                dispatch_async(dispatch_get_main_queue())  {
-                    completion(result: error!.localizedDescription)
-                }
+                print(error!.localizedDescription)
             }else {
                 // to encode arabic letters, seems to be working with this line
 //                let data = data?.base64EncodedDataWithOptions(.EncodingEndLineWithCarriageReturn)
                 
                 do {
-                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionary
+                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionary,
+                    feed = json["feed"] as? JSONDictionary,
+                    entries = feed["entry"] as? JSONArray
                     {
-                        
-                        print(json)
-                        
+                        var videos = [Videos]()
+                        for entry in entries {
+                            let entry = Videos(data: entry as! JSONDictionary)
+                            videos.append(entry)
+                        }
+
                         let proirity = DISPATCH_QUEUE_PRIORITY_HIGH
                         dispatch_async(dispatch_get_global_queue(proirity, 0)) {
                             dispatch_async(dispatch_get_main_queue()) {
-                                completion(result: "JSON serialization successful")
+                                completion(videos)
                             }
                         }
                     }
                 } catch {
-                    dispatch_async(dispatch_get_main_queue()) {
-                        completion(result: "Erorr in JSONSErialization")
-                    }
+                    print("Error in NSJSON serialization")
                 }
             
             }
