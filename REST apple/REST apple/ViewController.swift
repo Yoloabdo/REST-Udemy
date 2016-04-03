@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let api = APIManager()
-        api.loadData("http://tech-echo.com/api/get_recent_posts/", completion: didLoadData)
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=10/explicit=true/json", completion: didLoadData)
     }
 
     func didLoadData(result: String) -> Void {
