@@ -13,11 +13,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let api = APIManager()
+        api.loadData("http://tech-echo.com/api/get_recent_posts/", completion: didLoadData)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func didLoadData(result: String) -> Void {
+        
+        print(result)
+      
     }
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B415C8191CB1675D00088FA8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C8181CB1675D00088FA8 /* APIManager.swift */; };
 		B451A64D1CAEBE3E00A37992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */; };
 		B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64E1CAEBE3E00A37992 /* ViewController.swift */; };
 		B451A6521CAEBE3E00A37992 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B451A6501CAEBE3E00A37992 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B415C8181CB1675D00088FA8 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		B451A6491CAEBE3E00A37992 /* REST apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REST apple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B451A64E1CAEBE3E00A37992 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B415C8141CB163C700088FA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B415C8181CB1675D00088FA8 /* APIManager.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B415C8151CB163CE00088FA8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B451A64E1CAEBE3E00A37992 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		B415C8161CB163D500088FA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B451A6501CAEBE3E00A37992 /* Main.storyboard */,
+				B451A6551CAEBE3E00A37992 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B415C8171CB163F100088FA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */,
+				B451A6531CAEBE3E00A37992 /* Assets.xcassets */,
+				B451A6581CAEBE3E00A37992 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B451A6401CAEBE3D00A37992 = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +91,10 @@
 		B451A64B1CAEBE3E00A37992 /* REST apple */ = {
 			isa = PBXGroup;
 			children = (
-				B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */,
-				B451A64E1CAEBE3E00A37992 /* ViewController.swift */,
-				B451A6501CAEBE3E00A37992 /* Main.storyboard */,
-				B451A6531CAEBE3E00A37992 /* Assets.xcassets */,
-				B451A6551CAEBE3E00A37992 /* LaunchScreen.storyboard */,
-				B451A6581CAEBE3E00A37992 /* Info.plist */,
+				B415C8171CB163F100088FA8 /* Supporting Files */,
+				B415C8161CB163D500088FA8 /* Views */,
+				B415C8151CB163CE00088FA8 /* Controller */,
+				B415C8141CB163C700088FA8 /* Model */,
 			);
 			path = "REST apple";
 			sourceTree = "<group>";
@@ -136,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B415C8191CB1675D00088FA8 /* APIManager.swift in Sources */,
 				B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */,
 				B451A64D1CAEBE3E00A37992 /* AppDelegate.swift in Sources */,
 			);
@@ -291,6 +327,7 @@
 				B451A65D1CAEBE3E00A37992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
