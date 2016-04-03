@@ -21,6 +21,9 @@ class Videos {
      var _vReleaseDate: String?
      var _vPrice: String?
     
+    // this var gets created from the UI
+    var vImageData: NSData?
+    
     init(data: JSONDictionary) {
 
         // the name
