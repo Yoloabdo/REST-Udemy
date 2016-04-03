@@ -8,18 +8,47 @@
 
 import UIKit
 
+
+var reachability: Reachability?
+var reachabilityStatus = WIFI
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var internetCheck: Reachability?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.reachbilityChanged(_:)), name: kReachabilityChangedNotification, object: nil)
         
-        // disapling cache.
-//        NSURLCache.setSharedURLCache(NSURLCache(memoryCapacity: 0, diskCapacity: 0, diskPath: nil))
+        
+        internetCheck = Reachability.reachabilityForInternetConnection()
+        internetCheck?.startNotifier()
+
         return true
+    }
+    
+    func reachbilityChanged(notification: NSNotification)
+    {
+        reachability = notification.object as? Reachability
+        statusChangedWithReachability(reachability!)
+        
+    }
+    
+    func statusChangedWithReachability(currentReachability: Reachability)
+    {
+        let networkStatus: NetworkStatus = currentReachability.currentReachabilityStatus()
+        
+        switch networkStatus.rawValue {
+        case NotReachable.rawValue: reachabilityStatus = NOACCESS
+        case ReachableViaWiFi.rawValue: reachabilityStatus = WIFI
+        case ReachableViaWWAN.rawValue: reachabilityStatus = WWAN
+        default: break
+        }
+        
+         
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -42,6 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: kReachabilityChangedNotification, object: nil)
     }
 
 

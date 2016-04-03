@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     }
 
     func didLoadData(results: [Videos]) -> Void {
+        print(reachabilityStatus)
         
         let alert = UIAlertController(title: ("\(results.count)"), message: nil, preferredStyle: .Alert)
         
