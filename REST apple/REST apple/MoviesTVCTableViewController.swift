@@ -20,11 +20,14 @@ class MoviesTVCTableViewController: UITableViewController {
         
         reachabilityStatusChanged()
         
-        let api = APIManager()
-        
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/explicit=true/json", completion: didLoadData)
+       
         
 
+    }
+    
+    func runAPI() -> Void {
+        let api = APIManager()
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/explicit=true/json", completion: didLoadData)
     }
     
     func didLoadData(results: [Videos]) -> Void {
@@ -35,14 +38,37 @@ class MoviesTVCTableViewController: UITableViewController {
     
     func reachabilityStatusChanged() -> Void {
         switch reachabilityStatus {
-        case WWAN:
-            self.view.backgroundColor = UIColor.yellowColor()
-        case WIFI:
-            view.backgroundColor = UIColor.greenColor()
         case NOACCESS:
             view.backgroundColor = UIColor.redColor()
+            let alert = UIAlertController(title: "no connection", message: "make sure you're connected to internet", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Default) {
+                action in
+                print("Cancel")
+            }
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .Default) {
+                action in
+                print("deleted")
+            }
+            
+            let okAction = UIAlertAction(title: "Ok", style: .Default) {
+                action in
+                print("ok")
+            }
+            
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            alert.addAction(deleteAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
         default:
-            return
+            if videos.count > 0 {
+                print("Don't load")
+            }else{
+                runAPI()
+            }
         }
     }
     
