@@ -11,6 +11,7 @@
 		B415C81C1CB17F9E00088FA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C81B1CB17F9E00088FA8 /* Constants.swift */; };
 		B415C81E1CB1809F00088FA8 /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C81D1CB1809F00088FA8 /* MusicVideo.swift */; };
 		B415C8271CB1B42600088FA8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B415C8261CB1B42600088FA8 /* Reachability.m */; };
+		B44317871CB4428F0050F3B3 /* MoviesTVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44317861CB4428F0050F3B3 /* MoviesTVCTableViewController.swift */; };
 		B451A64D1CAEBE3E00A37992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */; };
 		B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64E1CAEBE3E00A37992 /* ViewController.swift */; };
 		B451A6521CAEBE3E00A37992 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B451A6501CAEBE3E00A37992 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		B415C8211CB1A90500088FA8 /* REST apple-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "REST apple-Bridging-Header.h"; sourceTree = "<group>"; };
 		B415C8221CB1A90500088FA8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		B415C8261CB1B42600088FA8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B44317861CB4428F0050F3B3 /* MoviesTVCTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTVCTableViewController.swift; sourceTree = "<group>"; };
 		B451A6491CAEBE3E00A37992 /* REST apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REST apple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B451A64E1CAEBE3E00A37992 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		B415C8151CB163CE00088FA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B44317861CB4428F0050F3B3 /* MoviesTVCTableViewController.swift */,
 				B451A64E1CAEBE3E00A37992 /* ViewController.swift */,
 			);
 			name = Controller;
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44317871CB4428F0050F3B3 /* MoviesTVCTableViewController.swift in Sources */,
 				B415C8191CB1675D00088FA8 /* APIManager.swift in Sources */,
 				B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */,
 				B415C81E1CB1809F00088FA8 /* MusicVideo.swift in Sources */,
