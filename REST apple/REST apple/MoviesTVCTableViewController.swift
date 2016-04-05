@@ -27,7 +27,7 @@ class MoviesTVCTableViewController: UITableViewController {
     
     func runAPI() -> Void {
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/explicit=true/json", completion: didLoadData)
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=200/explicit=true/json", completion: didLoadData)
     }
     
     func didLoadData(results: [Videos]) -> Void {
@@ -96,13 +96,9 @@ class MoviesTVCTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! videoCTVC
 
-        let video = videos[indexPath.row]
-        
-        cell.textLabel?.text = video._vname
-        cell.detailTextLabel?.text = video._vArtist
-
+        cell.video = videos[indexPath.row]
         return cell
     }
 

@@ -20,6 +20,16 @@ class videoCTVC: UITableViewCell {
         // Initialization code
     }
 
+    var video: Videos?{
+        didSet{
+            updateUI()
+        }
+    }
+    
+    func updateUI() {
+        SongNameLabel.text = video?._vname
+        ArtistNameLabel.text = video?._vArtist
+    }
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
