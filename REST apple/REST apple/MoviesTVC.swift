@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoviesTVCTableViewController: UITableViewController {
+class MoviesTVC: UITableViewController {
 
     var videos = [Videos]()
     

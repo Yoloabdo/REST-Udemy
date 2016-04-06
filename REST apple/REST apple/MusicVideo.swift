@@ -115,7 +115,7 @@ class Videos {
         
         
         _vname = vName
-        _vImageURL = imaglink.stringByReplacingOccurrencesOfString("100x100", withString: "600x600")
+        _vImageURL = imaglink.stringByReplacingOccurrencesOfString("100x100", withString: "450x450")
         _vVideoURL = vVideoURL
         _vRights = right
         _vArtist = artist

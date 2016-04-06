@@ -35,19 +35,18 @@ class videoCTVC: UITableViewCell {
         musicTitle.text = video?._vname
         
         guard let data = video?.vImageData else {
-            "download image"
+            // network loading
             getVideoImage(video!, imageView: videoImageView)
             return
         }
-        
-        print("Get data from array")
+        // loading it from the array videos calss.
         videoImageView.image = UIImage(data: data)
  
     }
     
     func getVideoImage(video: Videos, imageView: UIImageView)
     {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             let data = NSData(contentsOfURL: NSURL(string: video._vImageURL!)!)
             
             var image: UIImage?

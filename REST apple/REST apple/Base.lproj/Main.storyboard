@@ -9,7 +9,7 @@
         <!--iTunes top videos-->
         <scene sceneID="Tb7-Bh-DOQ">
             <objects>
-                <tableViewController title="iTunes top videos" id="PFh-C9-MMI" customClass="MoviesTVCTableViewController" customModule="REST_apple" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="iTunes top videos" id="PFh-C9-MMI" customClass="MoviesTVC" customModule="REST_apple" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="4eU-SZ-OAY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
