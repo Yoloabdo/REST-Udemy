@@ -34,42 +34,45 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8E-Tn-rFZ">
-                                            <rect key="frame" x="163" y="8" width="429" height="32.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8E-Tn-rFZ">
+                                            <rect key="frame" x="163" y="8" width="429" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="28" id="YLf-Vw-ATe"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="Song" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frn-9t-MEd">
-                                            <rect key="frame" x="163" y="48" width="429" height="27.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="Song" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frn-9t-MEd">
+                                            <rect key="frame" x="163" y="44" width="429" height="32"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="frn-9t-MEd" secondAttribute="leading" id="1Ts-tM-yNZ"/>
                                         <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" id="1jH-jH-hvD"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="n8E-Tn-rFZ" secondAttribute="trailing" id="2YC-ZH-Mqs"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="trailing" secondItem="pwc-SF-2Rt" secondAttribute="trailingMargin" id="2ze-rg-sXL"/>
                                         <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" id="876-9n-cTd"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" symbolic="YES" id="AMf-VJ-AA1"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="frn-9t-MEd" secondAttribute="leading" id="HLr-l4-fMi"/>
+                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="trailing" secondItem="pwc-SF-2Rt" secondAttribute="trailingMargin" id="9yz-hv-7IP"/>
                                         <constraint firstItem="oo9-LJ-ofd" firstAttribute="centerY" secondItem="pwc-SF-2Rt" secondAttribute="centerY" id="J4X-Bu-y3i"/>
+                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" symbolic="YES" id="L70-Qg-MZV"/>
                                         <constraint firstItem="frn-9t-MEd" firstAttribute="width" secondItem="n8E-Tn-rFZ" secondAttribute="width" id="Mcf-Vc-jCc"/>
                                         <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" id="P7R-pH-OLk"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="frn-9t-MEd" secondAttribute="trailing" id="Pmt-QL-3f8"/>
                                         <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" id="Qzu-Mp-cbo"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="top" secondItem="oo9-LJ-ofd" secondAttribute="top" id="Rgd-Rc-5KL"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="bottom" secondItem="oo9-LJ-ofd" secondAttribute="bottom" id="Scc-rR-33C"/>
                                         <constraint firstItem="oo9-LJ-ofd" firstAttribute="top" secondItem="pwc-SF-2Rt" secondAttribute="topMargin" id="X1o-vu-dZd"/>
                                         <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" id="Xjm-Ig-CTb"/>
+                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="top" secondItem="oo9-LJ-ofd" secondAttribute="top" id="aWJ-4R-7qK"/>
                                         <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="n8E-Tn-rFZ" secondAttribute="leading" id="bAf-kh-Sn7"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="top" secondItem="n8E-Tn-rFZ" secondAttribute="bottom" constant="8" symbolic="YES" id="bK8-Rb-1jR"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="trailing" secondItem="frn-9t-MEd" secondAttribute="trailing" id="jAQ-Gs-4cf"/>
+                                        <constraint firstItem="frn-9t-MEd" firstAttribute="top" secondItem="n8E-Tn-rFZ" secondAttribute="bottom" constant="8" symbolic="YES" id="hVb-aA-DOO"/>
+                                        <constraint firstItem="frn-9t-MEd" firstAttribute="bottom" secondItem="oo9-LJ-ofd" secondAttribute="bottom" id="jze-0Y-MrX"/>
                                         <constraint firstItem="oo9-LJ-ofd" firstAttribute="leading" secondItem="pwc-SF-2Rt" secondAttribute="leadingMargin" id="o21-Mf-fPy"/>
                                         <constraint firstItem="frn-9t-MEd" firstAttribute="trailing" secondItem="n8E-Tn-rFZ" secondAttribute="trailing" id="pEG-LK-YDT"/>
                                         <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" id="pMF-6T-KmT"/>
                                         <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="n8E-Tn-rFZ" secondAttribute="leading" id="pMQ-6F-qTQ"/>
+                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="trailing" secondItem="frn-9t-MEd" secondAttribute="trailing" id="rYr-7U-pHk"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -89,8 +92,8 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="ArtistNameLabel" destination="frn-9t-MEd" id="eo2-Jl-cI4"/>
-                                    <outlet property="SongNameLabel" destination="n8E-Tn-rFZ" id="iCu-jz-5jo"/>
+                                    <outlet property="musicTitle" destination="frn-9t-MEd" id="Vqa-aP-0xS"/>
+                                    <outlet property="rank" destination="n8E-Tn-rFZ" id="rQz-U1-Hkm"/>
                                     <outlet property="videoImageView" destination="oo9-LJ-ofd" id="qGw-fQ-QbX"/>
                                 </connections>
                             </tableViewCell>

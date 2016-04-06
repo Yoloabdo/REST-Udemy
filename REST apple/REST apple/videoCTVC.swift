@@ -10,15 +10,11 @@ import UIKit
 
 class videoCTVC: UITableViewCell {
 
-    @IBOutlet weak var SongNameLabel: UILabel!
-    @IBOutlet weak var ArtistNameLabel: UILabel!
+    @IBOutlet weak var rank: UILabel!
+    @IBOutlet weak var musicTitle: UILabel!
     
     @IBOutlet weak var videoImageView: UIImageView!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     var video: Videos?{
         didSet{
@@ -26,23 +22,32 @@ class videoCTVC: UITableViewCell {
         }
     }
     
+    
     func updateUI() {
-        SongNameLabel.text = video?._vArtist
-        ArtistNameLabel.text = video?._vname
         
+        musicTitle.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        rank.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
-        if video!.vImageData != nil {
-            print("Get data from array")
-            videoImageView.image = UIImage(data: (video?.vImageData)!)
-        }
-        else {
+        // to prevent loading old images.
+        videoImageView.image = nil
+        
+        rank.text = "\(video!._vrank! + 1)"
+        musicTitle.text = video?._vname
+        
+        guard let data = video?.vImageData else {
+            "download image"
             getVideoImage(video!, imageView: videoImageView)
+            return
         }
+        
+        print("Get data from array")
+        videoImageView.image = UIImage(data: data)
+ 
     }
     
     func getVideoImage(video: Videos, imageView: UIImageView)
     {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
             let data = NSData(contentsOfURL: NSURL(string: video._vImageURL!)!)
             
             var image: UIImage?
@@ -53,7 +58,9 @@ class videoCTVC: UITableViewCell {
             }
             
             dispatch_async(dispatch_get_main_queue()) {
-                imageView.image = image
+                if self.tag == video._vrank {
+                    imageView.image = image
+                }
             }
             
         }

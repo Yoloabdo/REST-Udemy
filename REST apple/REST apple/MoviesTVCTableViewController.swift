@@ -17,12 +17,17 @@ class MoviesTVCTableViewController: UITableViewController {
         super.viewDidLoad()
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(reachabilityStatusChanged), name: "ReachStatusChanged", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(preferedFontChanged), name: UIContentSizeCategoryDidChangeNotification, object: nil)
         
         reachabilityStatusChanged()
         
        
         
 
+    }
+    
+    func preferedFontChanged() -> Void {
+        print("font changed")
     }
     
     func runAPI() -> Void {
@@ -101,8 +106,10 @@ class MoviesTVCTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(StoryBoard.ReuseIdentfier, forIndexPath: indexPath) as! videoCTVC
-
-        cell.video = videos[indexPath.row]
+        let vid = videos[indexPath.row]
+        vid._vrank = indexPath.row
+        cell.tag = indexPath.row
+        cell.video = vid
         return cell
     }
 

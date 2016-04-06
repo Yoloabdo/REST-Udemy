@@ -10,16 +10,19 @@ import Foundation
 
 
 class Videos {
-     var _vname: String?
-     var _vImageURL: String?
-     var _vVideoURL: String?
-     var _vRights: String?
-     var _vArtist: String?
-     var _vImId: String?
-     var _vGenere: String?
-     var _vLinkITunes: String?
-     var _vReleaseDate: String?
-     var _vPrice: String?
+    
+    var _vname: String?
+    var _vImageURL: String?
+    var _vVideoURL: String?
+    var _vRights: String?
+    var _vArtist: String?
+    var _vImId: String?
+    var _vGenere: String?
+    var _vLinkITunes: String?
+    var _vReleaseDate: String?
+    var _vPrice: String?
+    var _vrank: Int?
+    
     
     // this var gets created from the UI
     var vImageData: NSData?
