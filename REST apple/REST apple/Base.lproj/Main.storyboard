@@ -10,19 +10,19 @@
         <scene sceneID="Tb7-Bh-DOQ">
             <objects>
                 <tableViewController title="iTunes top videos" id="PFh-C9-MMI" customClass="MoviesTVC" customModule="REST_apple" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="4eU-SZ-OAY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="4eU-SZ-OAY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="84" id="NHu-w6-MVl" customClass="ArticleCTVC" customModule="REST_apple" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="84"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="NHu-w6-MVl" customClass="ArticleCTVC" customModule="REST_apple" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NHu-w6-MVl" id="pwc-SF-2Rt">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="83.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="NotAvilable" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-LJ-ofd">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" misplaced="YES" image="NotAvilable" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-LJ-ofd">
                                             <rect key="frame" x="8" y="8" width="147" height="68"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="147" id="Yf6-bu-Yay"/>
@@ -34,45 +34,25 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Article title" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n8E-Tn-rFZ">
-                                            <rect key="frame" x="163" y="8" width="429" height="33"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="28" id="YLf-Vw-ATe"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عنوان المقال" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n8E-Tn-rFZ">
+                                            <rect key="frame" x="163" y="8" width="429" height="68"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="Short intro" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="frn-9t-MEd">
-                                            <rect key="frame" x="163" y="44" width="429" height="32"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="frn-9t-MEd" secondAttribute="leading" id="1Ts-tM-yNZ"/>
                                         <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" id="1jH-jH-hvD"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="n8E-Tn-rFZ" secondAttribute="trailing" id="2YC-ZH-Mqs"/>
                                         <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" id="876-9n-cTd"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="trailing" secondItem="pwc-SF-2Rt" secondAttribute="trailingMargin" id="9yz-hv-7IP"/>
                                         <constraint firstItem="oo9-LJ-ofd" firstAttribute="centerY" secondItem="pwc-SF-2Rt" secondAttribute="centerY" id="J4X-Bu-y3i"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" symbolic="YES" id="L70-Qg-MZV"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="width" secondItem="n8E-Tn-rFZ" secondAttribute="width" id="Mcf-Vc-jCc"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" id="P7R-pH-OLk"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="frn-9t-MEd" secondAttribute="trailing" id="Pmt-QL-3f8"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" id="Qzu-Mp-cbo"/>
+                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" id="PTO-x4-Cmy"/>
                                         <constraint firstItem="oo9-LJ-ofd" firstAttribute="top" secondItem="pwc-SF-2Rt" secondAttribute="topMargin" id="X1o-vu-dZd"/>
                                         <constraint firstItem="n8E-Tn-rFZ" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" constant="8" id="Xjm-Ig-CTb"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="top" secondItem="oo9-LJ-ofd" secondAttribute="top" id="aWJ-4R-7qK"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="n8E-Tn-rFZ" secondAttribute="leading" id="bAf-kh-Sn7"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="top" secondItem="n8E-Tn-rFZ" secondAttribute="bottom" constant="8" symbolic="YES" id="hVb-aA-DOO"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="bottom" secondItem="oo9-LJ-ofd" secondAttribute="bottom" id="jze-0Y-MrX"/>
+                                        <constraint firstAttribute="topMargin" secondItem="n8E-Tn-rFZ" secondAttribute="top" id="XrJ-vm-y7m"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="n8E-Tn-rFZ" secondAttribute="trailing" id="dyv-I2-qqV"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="n8E-Tn-rFZ" secondAttribute="bottom" constant="5.5" id="kfl-Nc-qaj"/>
                                         <constraint firstItem="oo9-LJ-ofd" firstAttribute="leading" secondItem="pwc-SF-2Rt" secondAttribute="leadingMargin" id="o21-Mf-fPy"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="trailing" secondItem="n8E-Tn-rFZ" secondAttribute="trailing" id="pEG-LK-YDT"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="oo9-LJ-ofd" secondAttribute="trailing" id="pMF-6T-KmT"/>
-                                        <constraint firstItem="frn-9t-MEd" firstAttribute="leading" secondItem="n8E-Tn-rFZ" secondAttribute="leading" id="pMQ-6F-qTQ"/>
-                                        <constraint firstItem="n8E-Tn-rFZ" firstAttribute="trailing" secondItem="frn-9t-MEd" secondAttribute="trailing" id="rYr-7U-pHk"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -80,20 +60,11 @@
                                             <exclude reference="2YC-ZH-Mqs"/>
                                             <exclude reference="876-9n-cTd"/>
                                             <exclude reference="Xjm-Ig-CTb"/>
-                                            <exclude reference="Mcf-Vc-jCc"/>
-                                            <exclude reference="P7R-pH-OLk"/>
-                                            <exclude reference="Pmt-QL-3f8"/>
-                                            <exclude reference="Qzu-Mp-cbo"/>
-                                            <exclude reference="bAf-kh-Sn7"/>
-                                            <exclude reference="pEG-LK-YDT"/>
-                                            <exclude reference="pMF-6T-KmT"/>
-                                            <exclude reference="pMQ-6F-qTQ"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="articleHeader" destination="oo9-LJ-ofd" id="E5y-BQ-oSQ"/>
-                                    <outlet property="shortText" destination="frn-9t-MEd" id="hcI-wX-Py0"/>
                                     <outlet property="title" destination="n8E-Tn-rFZ" id="Ylp-LE-wEH"/>
                                 </connections>
                             </tableViewCell>

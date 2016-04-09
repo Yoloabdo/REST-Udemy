@@ -9,21 +9,36 @@
 import Foundation
 
 class Articles {
+    
+    //MARK:- local vars
+    
     var title: String?
     var date: String?
     var content: String?
     var url: String?
     var id: Int?
-    var excerpt: String?
-    var articleThumbnailURL: String?
-    
-    
+    private var excerpt: String?
+    private var articleThumbnailURL: String?
     var thumbnailImageData: NSData?
     
-    func encodedURL(url: String) -> String {
-        let urlString = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())
-        return urlString!
+  
+    
+    // MARK:- safe getters
+    
+    var encodedThumbnailURL: String {
+        get {
+            return encodedURL(articleThumbnailURL!)
+        }
     }
+    
+    var shorDescribtion: String {
+        get {
+            return (excerpt?.deleteHTMLTags(["p"]))!
+        }
+    }
+    
+    
+    // Initializer 
     
     init(data: JSONDictionary) {
         
@@ -72,5 +87,28 @@ class Articles {
         articleThumbnailURL = thumb
         excerpt = excer
         
+    }
+    
+    //MARK:- Helper functions 
+    
+    func encodedURL(url: String) -> String {
+        let urlString = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())
+        return urlString!
+    }
+    
+    
+}
+
+extension String {
+    func deleteHTMLTag(tag:String) -> String {
+        return self.stringByReplacingOccurrencesOfString("(?i)</?\(tag)\\b[^<]*>", withString: "", options: .RegularExpressionSearch, range: nil)
+    }
+    
+    func deleteHTMLTags(tags:[String]) -> String {
+        var mutableString = self
+        for tag in tags {
+            mutableString = mutableString.deleteHTMLTag(tag)
+        }
+        return mutableString
     }
 }

@@ -11,7 +11,6 @@ import UIKit
 class ArticleCTVC: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var shortText: UILabel!
     
     @IBOutlet weak var articleHeader: UIImageView!
     
@@ -26,13 +25,12 @@ class ArticleCTVC: UITableViewCell {
     func updateUI() {
         
         title.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        shortText.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+//        shortText.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
         // to prevent loading old images.
         articleHeader.image = nil
         
         title.text = article?.title
-        shortText.text = article?.excerpt
         
         guard let data = article?.thumbnailImageData else {
             // network loading
@@ -47,14 +45,9 @@ class ArticleCTVC: UITableViewCell {
     func getArticleImage(article: Articles, imageView: UIImageView)
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            guard let imageURL = article.articleThumbnailURL else {
-                print("error loading url")
-                return
-            }
-            let escapedAddress = imageURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
-
+            let imageURL = article.encodedThumbnailURL
             
-            guard let data = NSData(contentsOfURL: NSURL(string:escapedAddress!)!) else {
+            guard let data = NSData(contentsOfURL: NSURL(string:imageURL)!) else {
                 print("error fetching image at url : \(imageURL)")
                 return
             }
