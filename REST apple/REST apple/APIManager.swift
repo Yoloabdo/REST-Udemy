@@ -28,20 +28,31 @@ class APIManager {
                 // to encode arabic letters, seems to be working with this line
 //                let data = data?.base64EncodedDataWithOptions(.EncodingEndLineWithCarriageReturn)
                 
+                guard var dataString = String(data: data!, encoding: NSUTF8StringEncoding) else{
+                    print("string error")
+                    return
+                }
+                
+                dataString = dataString.substringToIndex(dataString.endIndex.advancedBy(-82))
+                
+                let dataMod = dataString.dataUsingEncoding(NSUTF8StringEncoding)
+                
                 do {
-                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? [String: AnyObject] {
+                    guard let json = try NSJSONSerialization.JSONObjectWithData(dataMod!, options: .AllowFragments) as? [String:AnyObject] else {
+                        print("not parsed as array")
+                        return
+                    }
+                    print(json)
                         
-                        print(json)
-                        
-                        let proirity = DISPATCH_QUEUE_PRIORITY_HIGH
-                        dispatch_async(dispatch_get_global_queue(proirity, 0)) {
-                            dispatch_async(dispatch_get_main_queue()) {
-                                completion(result: "JSON serialization successful")
-                            }
+                    let proirity = DISPATCH_QUEUE_PRIORITY_HIGH
+                    dispatch_async(dispatch_get_global_queue(proirity, 0)) {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            completion(result: "JSON serialization successful")
                         }
                     }
                 } catch {
                     dispatch_async(dispatch_get_main_queue()) {
+                        print(error)
                         completion(result: "Erorr in JSONSErialization")
                     }
                 }
