@@ -17,8 +17,13 @@ class Articles {
     var excerpt: String?
     var articleThumbnailURL: String?
     
+    
     var thumbnailImageData: NSData?
     
+    func encodedURL(url: String) -> String {
+        let urlString = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLFragmentAllowedCharacterSet())
+        return urlString!
+    }
     
     init(data: JSONDictionary) {
         
@@ -37,19 +42,25 @@ class Articles {
         
         guard let dateA = data["date"] as? String
             else {
-                print("couldn't parse Title ")
+                print("couldn't parse date ")
                 return
         }
         
         guard let contentA = data["content"] as? String
             else {
-                print("couldn't parse Title ")
+                print("couldn't parse content ")
                 return
         }
         
         guard let thumb = data["thumbnail"] as? String
             else {
-                print("couldn't parse Title ")
+                print("couldn't parse thumbnail ")
+                return
+        }
+        
+        guard let excer = data["excerpt"] as? String
+            else {
+                print("couldn't parse excerpt ")
                 return
         }
 
@@ -59,7 +70,7 @@ class Articles {
         date = dateA
         content = contentA
         articleThumbnailURL = thumb
-        
+        excerpt = excer
         
     }
 }

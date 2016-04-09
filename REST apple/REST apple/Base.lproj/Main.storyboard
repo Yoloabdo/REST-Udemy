@@ -9,13 +9,13 @@
         <!--iTunes top videos-->
         <scene sceneID="Tb7-Bh-DOQ">
             <objects>
-                <tableViewController title="iTunes top videos" id="PFh-C9-MMI" sceneMemberID="viewController">
+                <tableViewController title="iTunes top videos" id="PFh-C9-MMI" customClass="MoviesTVC" customModule="REST_apple" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="4eU-SZ-OAY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="84" id="NHu-w6-MVl" customClass="videoCTVC" customModule="REST_apple" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="84" id="NHu-w6-MVl" customClass="ArticleCTVC" customModule="REST_apple" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="84"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NHu-w6-MVl" id="pwc-SF-2Rt">
@@ -34,8 +34,8 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8E-Tn-rFZ">
-                                            <rect key="frame" x="163" y="8" width="429" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Article title" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n8E-Tn-rFZ">
+                                            <rect key="frame" x="163" y="8" width="429" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="28" id="YLf-Vw-ATe"/>
                                             </constraints>
@@ -43,7 +43,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="Song" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frn-9t-MEd">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="Short intro" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="frn-9t-MEd">
                                             <rect key="frame" x="163" y="44" width="429" height="32"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -92,9 +92,9 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="musicTitle" destination="frn-9t-MEd" id="Vqa-aP-0xS"/>
-                                    <outlet property="rank" destination="n8E-Tn-rFZ" id="rQz-U1-Hkm"/>
-                                    <outlet property="videoImageView" destination="oo9-LJ-ofd" id="qGw-fQ-QbX"/>
+                                    <outlet property="articleHeader" destination="oo9-LJ-ofd" id="E5y-BQ-oSQ"/>
+                                    <outlet property="shortText" destination="frn-9t-MEd" id="hcI-wX-Py0"/>
+                                    <outlet property="title" destination="n8E-Tn-rFZ" id="Ylp-LE-wEH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

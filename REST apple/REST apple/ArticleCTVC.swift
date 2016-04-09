@@ -47,14 +47,21 @@ class ArticleCTVC: UITableViewCell {
     func getArticleImage(article: Articles, imageView: UIImageView)
     {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            let data = NSData(contentsOfURL: NSURL(string: (article.articleThumbnailURL)!)!)
+            guard let imageURL = article.articleThumbnailURL else {
+                print("error loading url")
+                return
+            }
+            let escapedAddress = imageURL.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+
+            
+            guard let data = NSData(contentsOfURL: NSURL(string:escapedAddress!)!) else {
+                print("error fetching image at url : \(imageURL)")
+                return
+            }
             
             var image: UIImage?
-            
-            if data != nil {
-                article.thumbnailImageData = data
-                image = UIImage(data: data!)
-            }
+            article.thumbnailImageData = data
+            image = UIImage(data: data)
             
             dispatch_async(dispatch_get_main_queue()) {
                 imageView.image = image

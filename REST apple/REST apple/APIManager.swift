@@ -29,14 +29,17 @@ class APIManager {
 //                let data = data?.base64EncodedDataWithOptions(.EncodingEndLineWithCarriageReturn)
                 
                 // tech-echo fix
+                var dataMod = data
                 guard var dataString = String(data: data!, encoding: NSUTF8StringEncoding) else{
                     print("string error")
                     return
                 }
-                
-                dataString = dataString.substringToIndex(dataString.endIndex.advancedBy(-82))
-                
-                let dataMod = dataString.dataUsingEncoding(NSUTF8StringEncoding)
+                if dataString.hasSuffix("-->") {
+                    dataString = dataString.substringToIndex(dataString.endIndex.advancedBy(-82))
+                    
+                    dataMod = dataString.dataUsingEncoding(NSUTF8StringEncoding)
+
+                }
 
                 
                 do {
@@ -53,7 +56,6 @@ class APIManager {
                         dispatch_async(dispatch_get_global_queue(proirity, 0)) {
                             dispatch_async(dispatch_get_main_queue()) {
                                 completion(articles)
-                                print("done")
 
                             }
                         }
