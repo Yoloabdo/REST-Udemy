@@ -9,7 +9,7 @@
         <!--iTunes top videos-->
         <scene sceneID="Tb7-Bh-DOQ">
             <objects>
-                <tableViewController title="iTunes top videos" id="PFh-C9-MMI" customClass="MoviesTVC" customModule="REST_apple" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="iTunes top videos" id="PFh-C9-MMI" customClass="ArticlesTVC" customModule="REST_apple" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="4eU-SZ-OAY">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" misplaced="YES" image="NotAvilable" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-LJ-ofd">
-                                            <rect key="frame" x="8" y="8" width="147" height="68"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="NotAvilable" translatesAutoresizingMaskIntoConstraints="NO" id="oo9-LJ-ofd">
+                                            <rect key="frame" x="8" y="8" width="147" height="73.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="147" id="Yf6-bu-Yay"/>
                                                 <constraint firstAttribute="width" constant="80" id="hlk-X2-plL"/>
@@ -74,7 +74,7 @@
                             <outlet property="delegate" destination="PFh-C9-MMI" id="jaZ-Oq-LWr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Eqj-Ne-FBF"/>
+                    <navigationItem key="navigationItem" title="صدى التقنية" id="Eqj-Ne-FBF"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="pmv-8m-tWW">
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle">
@@ -86,6 +86,9 @@
                             </fragment>
                         </attributedString>
                     </refreshControl>
+                    <connections>
+                        <outlet property="tableHeader" destination="Eqj-Ne-FBF" id="rDE-mi-YSq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzQ-AL-1jV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

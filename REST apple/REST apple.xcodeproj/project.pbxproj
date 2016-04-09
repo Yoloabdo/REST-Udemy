@@ -11,7 +11,7 @@
 		B415C81C1CB17F9E00088FA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C81B1CB17F9E00088FA8 /* Constants.swift */; };
 		B415C8271CB1B42600088FA8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B415C8261CB1B42600088FA8 /* Reachability.m */; };
 		B441B7BB1CB9139E00A8F957 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B7BA1CB9139E00A8F957 /* Articles.swift */; };
-		B44317871CB4428F0050F3B3 /* MoviesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44317861CB4428F0050F3B3 /* MoviesTVC.swift */; };
+		B44317871CB4428F0050F3B3 /* ArticlesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44317861CB4428F0050F3B3 /* ArticlesTVC.swift */; };
 		B44317891CB461CF0050F3B3 /* ArticleCTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44317881CB461CF0050F3B3 /* ArticleCTVC.swift */; };
 		B451A64D1CAEBE3E00A37992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */; };
 		B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64E1CAEBE3E00A37992 /* ViewController.swift */; };
@@ -27,7 +27,7 @@
 		B415C8221CB1A90500088FA8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		B415C8261CB1B42600088FA8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		B441B7BA1CB9139E00A8F957 /* Articles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
-		B44317861CB4428F0050F3B3 /* MoviesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTVC.swift; sourceTree = "<group>"; };
+		B44317861CB4428F0050F3B3 /* ArticlesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTVC.swift; sourceTree = "<group>"; };
 		B44317881CB461CF0050F3B3 /* ArticleCTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleCTVC.swift; sourceTree = "<group>"; };
 		B451A6491CAEBE3E00A37992 /* REST apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REST apple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				B44317881CB461CF0050F3B3 /* ArticleCTVC.swift */,
-				B44317861CB4428F0050F3B3 /* MoviesTVC.swift */,
+				B44317861CB4428F0050F3B3 /* ArticlesTVC.swift */,
 				B451A64E1CAEBE3E00A37992 /* ViewController.swift */,
 			);
 			name = Controller;
@@ -206,7 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B44317871CB4428F0050F3B3 /* MoviesTVC.swift in Sources */,
+				B44317871CB4428F0050F3B3 /* ArticlesTVC.swift in Sources */,
 				B415C8191CB1675D00088FA8 /* APIManager.swift in Sources */,
 				B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */,
 				B441B7BB1CB9139E00A8F957 /* Articles.swift in Sources */,

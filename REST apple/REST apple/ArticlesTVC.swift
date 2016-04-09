@@ -8,10 +8,24 @@
 
 import UIKit
 
-class MoviesTVC: UITableViewController {
+class ArticlesTVC: UITableViewController {
 
     var articles = [Articles]()
     
+    @IBOutlet weak var tableHeader: UINavigationItem! {
+        didSet{
+            let myCustomView = UIImageView()
+            let myImage: UIImage = UIImage(named: "logo")!
+            
+            myCustomView.image = myImage
+            myCustomView.contentMode = .ScaleAspectFit
+            myCustomView.frame.size.width = 145;
+            myCustomView.frame.size.height = 60;
+            myCustomView.frame.origin = CGPoint(x: 2, y: 8)
+
+            tableHeader.titleView = myCustomView
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,49 +122,5 @@ class MoviesTVC: UITableViewController {
     }
 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
