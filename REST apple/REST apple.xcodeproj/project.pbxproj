@@ -11,6 +11,7 @@
 		B415C81C1CB17F9E00088FA8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C81B1CB17F9E00088FA8 /* Constants.swift */; };
 		B415C81E1CB1809F00088FA8 /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B415C81D1CB1809F00088FA8 /* MusicVideo.swift */; };
 		B415C8271CB1B42600088FA8 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B415C8261CB1B42600088FA8 /* Reachability.m */; };
+		B441B7BB1CB9139E00A8F957 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B7BA1CB9139E00A8F957 /* Articles.swift */; };
 		B44317871CB4428F0050F3B3 /* MoviesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44317861CB4428F0050F3B3 /* MoviesTVC.swift */; };
 		B44317891CB461CF0050F3B3 /* videoCTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44317881CB461CF0050F3B3 /* videoCTVC.swift */; };
 		B451A64D1CAEBE3E00A37992 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451A64C1CAEBE3E00A37992 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 		B415C8211CB1A90500088FA8 /* REST apple-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "REST apple-Bridging-Header.h"; sourceTree = "<group>"; };
 		B415C8221CB1A90500088FA8 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		B415C8261CB1B42600088FA8 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B441B7BA1CB9139E00A8F957 /* Articles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		B44317861CB4428F0050F3B3 /* MoviesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesTVC.swift; sourceTree = "<group>"; };
 		B44317881CB461CF0050F3B3 /* videoCTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = videoCTVC.swift; sourceTree = "<group>"; };
 		B451A6491CAEBE3E00A37992 /* REST apple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "REST apple.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +56,7 @@
 			children = (
 				B415C8181CB1675D00088FA8 /* APIManager.swift */,
 				B415C81D1CB1809F00088FA8 /* MusicVideo.swift */,
+				B441B7BA1CB9139E00A8F957 /* Articles.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				B415C8191CB1675D00088FA8 /* APIManager.swift in Sources */,
 				B451A64F1CAEBE3E00A37992 /* ViewController.swift in Sources */,
 				B415C81E1CB1809F00088FA8 /* MusicVideo.swift in Sources */,
+				B441B7BB1CB9139E00A8F957 /* Articles.swift in Sources */,
 				B451A64D1CAEBE3E00A37992 /* AppDelegate.swift in Sources */,
 				B44317891CB461CF0050F3B3 /* videoCTVC.swift in Sources */,
 				B415C8271CB1B42600088FA8 /* Reachability.m in Sources */,

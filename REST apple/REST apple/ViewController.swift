@@ -19,11 +19,11 @@ class ViewController: UIViewController {
 
         let api = APIManager()
         
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=10/explicit=true/json", completion: didLoadData)
+        api.loadData("http://tech-echo.com/api/get_recent_posts/", completion: didLoadData)
         
     }
 
-    func didLoadData(results: [Videos]) -> Void {
+    func didLoadData(results: [Articles]) -> Void {
         print(reachabilityStatus)
         
         

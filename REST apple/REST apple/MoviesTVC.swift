@@ -10,7 +10,7 @@ import UIKit
 
 class MoviesTVC: UITableViewController {
 
-    var videos = [Videos]()
+    var articles = [Articles]()
     
     
     override func viewDidLoad() {
@@ -32,11 +32,11 @@ class MoviesTVC: UITableViewController {
     
     func runAPI() -> Void {
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=200/explicit=true/json", completion: didLoadData)
+        api.loadData("http://tech-echo.com/api/get_recent_posts/", completion: didLoadData)
     }
     
-    func didLoadData(results: [Videos]) -> Void {
-        videos = results
+    func didLoadData(results: [Articles]) -> Void {
+        articles = results
         tableView.reloadData()
         
     }
@@ -69,7 +69,7 @@ class MoviesTVC: UITableViewController {
             self.presentViewController(alert, animated: true, completion: nil)
             
         default:
-            if videos.count > 0 {
+            if articles.count > 0 {
                 print("Don't load")
             }else{
                 runAPI()
@@ -100,16 +100,15 @@ class MoviesTVC: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return videos.count
+        return articles.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(StoryBoard.ReuseIdentfier, forIndexPath: indexPath) as! videoCTVC
-        let vid = videos[indexPath.row]
-        vid._vrank = indexPath.row
-        cell.tag = indexPath.row
-        cell.video = vid
+ 
+        let artic = articles[indexPath.row]
+        cell.musicTitle.text = artic.title
         return cell
     }
 

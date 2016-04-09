@@ -10,7 +10,7 @@ import Foundation
 class APIManager {
     
     
-    func loadData(urlString: String, completion: [Videos] -> Void) {
+    func loadData(urlString: String, completion: [Articles] -> Void) {
         
         // setting cache to nill through setting instead of the delegate file
         let config = NSURLSessionConfiguration.ephemeralSessionConfiguration()
@@ -28,21 +28,33 @@ class APIManager {
                 // to encode arabic letters, seems to be working with this line
 //                let data = data?.base64EncodedDataWithOptions(.EncodingEndLineWithCarriageReturn)
                 
+                // tech-echo fix
+                guard var dataString = String(data: data!, encoding: NSUTF8StringEncoding) else{
+                    print("string error")
+                    return
+                }
+                
+                dataString = dataString.substringToIndex(dataString.endIndex.advancedBy(-82))
+                
+                let dataMod = dataString.dataUsingEncoding(NSUTF8StringEncoding)
+
+                
                 do {
-                    if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionary,
-                    feed = json["feed"] as? JSONDictionary,
-                    entries = feed["entry"] as? JSONArray
+                    if let json = try NSJSONSerialization.JSONObjectWithData(dataMod!, options: .AllowFragments) as? JSONDictionary,
+                    entries = json["posts"] as? JSONArray
                     {
-                        var videos = [Videos]()
+                        var articles = [Articles]()
                         for entry in entries {
-                            let entry = Videos(data: entry as! JSONDictionary)
-                            videos.append(entry)
+                            let entry = Articles(data: entry as! JSONDictionary)
+                            articles.append(entry)
                         }
 
                         let proirity = DISPATCH_QUEUE_PRIORITY_HIGH
                         dispatch_async(dispatch_get_global_queue(proirity, 0)) {
                             dispatch_async(dispatch_get_main_queue()) {
-                                completion(videos)
+                                completion(articles)
+                                print("done")
+
                             }
                         }
                     }
