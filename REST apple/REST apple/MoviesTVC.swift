@@ -105,10 +105,10 @@ class MoviesTVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(StoryBoard.ReuseIdentfier, forIndexPath: indexPath) as! videoCTVC
+        let cell = tableView.dequeueReusableCellWithIdentifier(StoryBoard.ReuseIdentfier, forIndexPath: indexPath) as! ArticleCTVC
  
         let artic = articles[indexPath.row]
-        cell.musicTitle.text = artic.title
+        cell.title.text = artic.title
         return cell
     }
 

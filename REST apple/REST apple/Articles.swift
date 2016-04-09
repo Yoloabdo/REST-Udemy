@@ -15,7 +15,9 @@ class Articles {
     var url: String?
     var id: Int?
     var excerpt: String?
+    var articleThumbnailURL: String?
     
+    var thumbnailImageData: NSData?
     
     
     init(data: JSONDictionary) {
@@ -45,11 +47,18 @@ class Articles {
                 return
         }
         
+        guard let thumb = data["thumbnail"] as? String
+            else {
+                print("couldn't parse Title ")
+                return
+        }
+
         
         id = idA
         title = titleA
         date = dateA
         content = contentA
+        articleThumbnailURL = thumb
         
         
     }
