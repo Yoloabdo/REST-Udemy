@@ -121,10 +121,10 @@
             </objects>
             <point key="canvasLocation" x="1310" y="19"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="xJo-4G-GBS">
             <objects>
-                <viewController id="HoD-wl-6YT" sceneMemberID="viewController">
+                <viewController id="HoD-wl-6YT" customClass="DetailsViewController" customModule="REST_apple" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MLr-vR-8pG"/>
                         <viewControllerLayoutGuide type="bottom" id="WoA-AP-kOz"/>
@@ -198,6 +198,13 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="yHv-Om-VV0"/>
                         <barButtonItem systemItem="action" id="PG3-ap-kdW"/>
                     </toolbarItems>
+                    <connections>
+                        <outlet property="genereLabel" destination="9Sn-0S-IHH" id="7Mk-59-vqD"/>
+                        <outlet property="priceLabel" destination="hj4-l4-v63" id="NAJ-Fl-DYJ"/>
+                        <outlet property="rightsLabel" destination="zNT-1X-VUd" id="oxx-z8-L90"/>
+                        <outlet property="songImageView" destination="Dpj-bH-Ygl" id="IMY-h7-Hu9"/>
+                        <outlet property="vNameLabel" destination="5kw-PG-KyU" id="jTg-rV-5e4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VuJ-JK-vwY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
