@@ -66,6 +66,7 @@
                                 <connections>
                                     <outlet property="articleHeader" destination="oo9-LJ-ofd" id="E5y-BQ-oSQ"/>
                                     <outlet property="title" destination="n8E-Tn-rFZ" id="Ylp-LE-wEH"/>
+                                    <segue destination="pR4-XH-bHX" kind="show" identifier="ArticleDetails" id="7Su-ZN-won"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -93,6 +94,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DzQ-AL-1jV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1310" y="19"/>
+        </scene>
+        <!--Article Details View Controller-->
+        <scene sceneID="B7w-6P-xFg">
+            <objects>
+                <viewController id="pR4-XH-bHX" customClass="ArticleDetailsViewController" customModule="REST_apple" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="19X-mp-jvn"/>
+                        <viewControllerLayoutGuide type="bottom" id="SIv-CG-Dde"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qwr-Y6-cB2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XmB-eA-w35">
+                                <rect key="frame" x="20" y="64" width="560" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XmB-eA-w35" firstAttribute="top" secondItem="19X-mp-jvn" secondAttribute="bottom" id="RQh-ui-gh9"/>
+                            <constraint firstItem="SIv-CG-Dde" firstAttribute="top" secondItem="XmB-eA-w35" secondAttribute="bottom" id="nRM-p1-o3O"/>
+                            <constraint firstItem="XmB-eA-w35" firstAttribute="leading" secondItem="qwr-Y6-cB2" secondAttribute="leadingMargin" id="quq-hw-Tdd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XmB-eA-w35" secondAttribute="trailing" id="yrz-dG-XMG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="articleView" destination="XmB-eA-w35" id="IBE-F7-POQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="krE-I1-SKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1978" y="5"/>
         </scene>
         <!--iTunes top video clips-->
         <scene sceneID="K9L-Cv-FLl">

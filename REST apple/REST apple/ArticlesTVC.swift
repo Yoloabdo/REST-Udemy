@@ -94,6 +94,7 @@ class ArticlesTVC: UITableViewController {
     
     struct StoryBoard {
         static let ReuseIdentfier = "cell"
+        static let segueIdentfier = "ArticleDetails"
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,6 +122,9 @@ class ArticlesTVC: UITableViewController {
         return cell
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == StoryBoard.segueIdentfier, let tvc
+    }
 
 
 }
