@@ -86,6 +86,7 @@ class MoviesTVC: UITableViewController {
     
     struct StoryBoard {
         static let ReuseIdentfier = "cell"
+        static let SegueIdentfier = "details"
     }
 
     override func didReceiveMemoryWarning() {
