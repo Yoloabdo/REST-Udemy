@@ -25,6 +25,13 @@ class DetailsViewController: UIViewController {
   
     func updateUI() {
         if let vid = video {
+            
+            vNameLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
+            rightsLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+            priceLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+            genereLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+            
+            
             vNameLabel.text = vid._vname
             rightsLabel.text = vid._vRights
             priceLabel.text = vid._vPrice
