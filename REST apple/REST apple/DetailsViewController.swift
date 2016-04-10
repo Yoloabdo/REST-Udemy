@@ -21,15 +21,13 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateFonts), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+
     }
   
     func updateUI() {
         if let vid = video {
             
-            vNameLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
-            rightsLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-            priceLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-            genereLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
             
             
             vNameLabel.text = vid._vname
@@ -46,14 +44,21 @@ class DetailsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func updateFonts() {
+        vNameLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
+        rightsLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        priceLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        genereLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        
     }
-    */
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
+    }
+    
+    
+
+ 
 
 }
