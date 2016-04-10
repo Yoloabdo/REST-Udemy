@@ -97,6 +97,7 @@
 		B415C8151CB163CE00088FA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B48094E41CBAB70300037B94 /* ArticleDetailsViewController.swift */,
 				B44317881CB461CF0050F3B3 /* ArticleCTVC.swift */,
 				B44317861CB4428F0050F3B3 /* ArticlesTVC.swift */,
 				B451A64E1CAEBE3E00A37992 /* ViewController.swift */,
@@ -108,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				B451A6501CAEBE3E00A37992 /* Main.storyboard */,
-				B48094E41CBAB70300037B94 /* ArticleDetailsViewController.swift */,
 				B451A6551CAEBE3E00A37992 /* LaunchScreen.storyboard */,
 			);
 			name = Views;

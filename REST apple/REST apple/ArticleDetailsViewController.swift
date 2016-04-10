@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Kanna
 class ArticleDetailsViewController: UIViewController {
     @IBOutlet weak var articleView: UITextView!
 
@@ -15,7 +15,8 @@ class ArticleDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        articleView.text = article?.content
+        articleView.text = parsing()
+//        articleView.text = article?.content
 
         // Do any additional setup after loading the view.
     }
@@ -25,6 +26,22 @@ class ArticleDetailsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func parsing() -> String {
+        guard let parsedContent = Kanna.HTML(html: (article?.content)!, encoding: NSUTF8StringEncoding) else {
+            return "parsing html error"
+        }
+        var links = [String]()
+        var paragraphs = [String]()
+        for para in parsedContent.css("p") {
+            paragraphs.append(para.text!)
+        }
+        for link in parsedContent.css("a, link") {
+            print(link.text)
+            links.append(link["href"]!)
+//            print(link["href"])
+        }
+        return paragraphs.joinWithSeparator(" ")
+    }
 
     /*
     // MARK: - Navigation

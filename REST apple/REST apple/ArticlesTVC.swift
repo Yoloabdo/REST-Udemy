@@ -123,7 +123,13 @@ class ArticlesTVC: UITableViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == StoryBoard.segueIdentfier, let tvc
+        if segue.identifier == StoryBoard.segueIdentfier {
+            guard let tvc = segue.destinationViewController as? ArticleDetailsViewController, index = tableView.indexPathForSelectedRow?.row else {
+                print("error loading controller")
+                return
+            }
+            tvc.article = articles[index]
+        }
     }
 
 
