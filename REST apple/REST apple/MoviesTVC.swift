@@ -139,7 +139,7 @@ class MoviesTVC: UITableViewController {
         }
         
         let formatter = NSDateFormatter()
-        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .MediumStyle
         let refreshDate = formatter.stringFromDate(NSDate())
         refreshControl?.attributedTitle = NSAttributedString(string: "\(refreshDate)")
     }

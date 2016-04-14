@@ -13,7 +13,7 @@ class SettingsTableViewController: UIViewController {
     let defaults = NSUserDefaults.standardUserDefaults()
     
 
-    @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var aboutButton: UIButton!
     
     @IBOutlet weak var feedbackLabel: UILabel!
     @IBOutlet weak var securityLabel: UILabel!
@@ -21,7 +21,9 @@ class SettingsTableViewController: UIViewController {
     @IBOutlet weak var bestImageQuality: UILabel!
     
     @IBOutlet weak var APICnt: UILabel!
+    @IBOutlet weak var numberOfvideosLabel: UILabel!
     
+    @IBOutlet weak var dragSliderLabel: UILabel!
     @IBOutlet weak var sliderCnt: UISlider!
     @IBOutlet weak var touchID: UISwitch!
 
@@ -72,10 +74,13 @@ class SettingsTableViewController: UIViewController {
     }
     
     func updateFonts() -> Void {
-        aboutLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        aboutButton.titleLabel?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         feedbackLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         securityLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         bestImageQuality.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         APICnt.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        numberOfvideosLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        dragSliderLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
+        
     }
 }
