@@ -12,6 +12,10 @@ class MoviesTVC: UITableViewController {
 
     var videos = [Videos]()
     
+    let defaults = NSUserDefaults.standardUserDefaults()
+    
+    var limit = 10
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +25,6 @@ class MoviesTVC: UITableViewController {
         
         reachabilityStatusChanged()
         
-       
         
 
     }
@@ -30,15 +33,11 @@ class MoviesTVC: UITableViewController {
         print("font changed")
     }
     
-    func runAPI() -> Void {
-        let api = APIManager()
-        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=200/explicit=true/json", completion: didLoadData)
-    }
     
-    func didLoadData(results: [Videos]) -> Void {
-        videos = results
-        tableView.reloadData()
-        
+   
+    @IBAction func refreshFeed(sender: UIRefreshControl) {
+        refreshControl?.endRefreshing()
+        runAPI()
     }
     
     func reachabilityStatusChanged() -> Void {
@@ -131,5 +130,32 @@ class MoviesTVC: UITableViewController {
         }
     }
     
+    
+    // MARK: - Connetivity functions 
+    func getAPICount() {
+        
+        if let value = defaults.objectForKey("APICNT"){
+            limit = Int(value as! NSNumber)
+        }
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        let refreshDate = formatter.stringFromDate(NSDate())
+        refreshControl?.attributedTitle = NSAttributedString(string: "\(refreshDate)")
+    }
+    
+    
+    func runAPI() -> Void {
+        getAPICount()
+        title = "The iTunes Top \(limit) Music Videos "
+        let api = APIManager()
+        api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=\(limit)/explicit=true/json", completion: didLoadData)
+        
+    }
+    
+    func didLoadData(results: [Videos]) -> Void {
+        videos = results
+        tableView.reloadData()
+    }
     
 }
