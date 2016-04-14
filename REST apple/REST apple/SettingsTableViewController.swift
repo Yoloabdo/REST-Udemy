@@ -8,9 +8,11 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UIViewController {
     
+    let defaults = NSUserDefaults.standardUserDefaults()
     
+
     @IBOutlet weak var aboutLabel: UILabel!
     
     @IBOutlet weak var feedbackLabel: UILabel!
@@ -22,14 +24,21 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var sliderCnt: UISlider!
     @IBOutlet weak var touchID: UISwitch!
+
+    @IBAction func sliderAPICnt(sender: UISlider) {
+        let value = Int(sender.value)
+        defaults.setObject(value, forKey: StoryBoard.APICount)
+        APICnt.text = "\(value) "
+    }
     
     private struct StoryBoard {
         static let SecurityKey = "SecSettings"
+        static let APICount = "APICNT"
+        static let DefaultDownloadedAPIValue = 10
     }
     
     @IBAction func touchIdSec(sender: UISwitch) {
         
-        let defaults = NSUserDefaults.standardUserDefaults()
         if touchID.on {
             defaults.setBool(true, forKey: StoryBoard.SecurityKey)
         }else {
@@ -44,7 +53,15 @@ class SettingsTableViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateFonts), name: UIContentSizeCategoryDidChangeNotification, object: nil)
         title = "settings"
         
-        touchID.on = NSUserDefaults.standardUserDefaults().boolForKey(StoryBoard.SecurityKey)
+        touchID.on = defaults.boolForKey(StoryBoard.SecurityKey)
+        
+        guard let value = defaults.objectForKey(StoryBoard.APICount) else {
+            APICnt.text = "\(StoryBoard.DefaultDownloadedAPIValue)"
+            sliderCnt.value = Float(StoryBoard.DefaultDownloadedAPIValue)
+            return
+        }
+        APICnt.text = "\(value)"
+        sliderCnt.value = Float(value as! NSNumber)
         
     }
     
