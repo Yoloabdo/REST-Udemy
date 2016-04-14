@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class DetailsViewController: UIViewController {
 
@@ -43,6 +45,21 @@ class DetailsViewController: UIViewController {
         }
     }
     
+    @IBAction func playVideo(sender: UIBarButtonItem) {
+        guard let url = NSURL(string: (video?._vVideoURL)!) else {
+            print("couldn't load video URL")
+            return
+        }
+        
+        let player = AVPlayer(URL: url)
+        
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        
+        self.presentViewController(playerViewController, animated: true) {
+            playerViewController.player?.play()
+        }
+    }
 
     func updateFonts() {
         vNameLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)

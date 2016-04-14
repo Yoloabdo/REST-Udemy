@@ -365,7 +365,11 @@
                         </variation>
                     </view>
                     <toolbarItems>
-                        <barButtonItem systemItem="play" id="BAg-Zb-nZC"/>
+                        <barButtonItem systemItem="play" id="BAg-Zb-nZC">
+                            <connections>
+                                <action selector="playVideo:" destination="HoD-wl-6YT" id="G7m-EL-Cwh"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="yHv-Om-VV0"/>
                         <barButtonItem systemItem="action" id="PG3-ap-kdW"/>
                     </toolbarItems>
