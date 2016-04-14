@@ -18,6 +18,7 @@
 		B451A6541CAEBE3E00A37992 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B451A6531CAEBE3E00A37992 /* Assets.xcassets */; };
 		B451A6571CAEBE3E00A37992 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B451A6551CAEBE3E00A37992 /* LaunchScreen.storyboard */; };
 		B48094E31CBA95C300037B94 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48094E21CBA95C300037B94 /* DetailsViewController.swift */; };
+		B4E324701CBFB063004C6246 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E3246F1CBFB063004C6246 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B451A6561CAEBE3E00A37992 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B451A6581CAEBE3E00A37992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B48094E21CBA95C300037B94 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		B4E3246F1CBFB063004C6246 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		B415C8151CB163CE00088FA8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B4E3246F1CBFB063004C6246 /* SettingsTableViewController.swift */,
 				B48094E21CBA95C300037B94 /* DetailsViewController.swift */,
 				B44317881CB461CF0050F3B3 /* videoCTVC.swift */,
 				B44317861CB4428F0050F3B3 /* MoviesTVC.swift */,
@@ -214,6 +217,7 @@
 				B44317891CB461CF0050F3B3 /* videoCTVC.swift in Sources */,
 				B415C8271CB1B42600088FA8 /* Reachability.m in Sources */,
 				B415C81C1CB17F9E00088FA8 /* Constants.swift in Sources */,
+				B4E324701CBFB063004C6246 /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
