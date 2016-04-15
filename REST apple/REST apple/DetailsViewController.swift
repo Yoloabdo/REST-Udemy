@@ -44,6 +44,11 @@ class DetailsViewController: UIViewController {
             }
         }
     }
+    @IBAction func shareButton(sender: UIBarButtonItem) {
+        shareMedia()
+        
+    }
+    
     
     @IBAction func playVideo(sender: UIBarButtonItem) {
         guard let url = NSURL(string: (video?._vVideoURL)!) else {
@@ -61,6 +66,29 @@ class DetailsViewController: UIViewController {
         }
     }
 
+    func shareMedia(){
+        let activity1 = "Have you had the opportunity to see this Music Video?"
+        let activity2 = "\(video?._vname) by \(video?._vArtist)"
+        let activity3 = "Watch it and tell me what do you think?"
+        let activity4 = video?._vLinkITunes
+        let activity5 = "(Shared with the Music Video App!)"
+        
+        let activityViewController = UIActivityViewController(activityItems: [activity1,activity2, activity3, activity4!, activity5], applicationActivities: nil)
+        
+        // to stop sharing to any service
+//        activityViewController.excludedActivityTypes = [UIActivityTypeMail]
+        
+        activityViewController.completionWithItemsHandler = {
+            (activity, success, items, error) in
+            
+            if activity == UIActivityTypeMail {
+                print("email selected")
+            }
+        }
+        
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     func updateFonts() {
         vNameLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleTitle1)
         rightsLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)

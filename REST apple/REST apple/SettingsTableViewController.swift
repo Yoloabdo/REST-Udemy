@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingsTableViewController: UIViewController {
+class SettingsTableViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
@@ -22,6 +23,7 @@ class SettingsTableViewController: UIViewController {
     
     @IBOutlet weak var APICnt: UILabel!
     @IBOutlet weak var numberOfvideosLabel: UILabel!
+    @IBOutlet weak var feedbackBtnLabel: UIButton!
     
     @IBOutlet weak var dragSliderLabel: UILabel!
     @IBOutlet weak var sliderCnt: UISlider!
@@ -48,7 +50,49 @@ class SettingsTableViewController: UIViewController {
         }
     }
     
+    // MARK:- MAIL functions 
     
+    @IBAction func feedBackBtn(sender: UIButton) {
+        
+        let mailCompVC = configureMail()
+        if MFMailComposeViewController.canSendMail() {
+            self.presentViewController(mailCompVC, animated: true, completion: nil)
+        }else{
+            mailAlert()
+        }
+        
+    }
+    
+    func configureMail() -> MFMailComposeViewController {
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.mailComposeDelegate = self
+        mailComposeVC.setToRecipients(["dhooom.da@gmail.com"])
+        mailComposeVC.setSubject("Music app feedBack")
+        mailComposeVC.setMessageBody("Hello Abdo, \n\nI would like to share the following feedback ...\n", isHTML: false)
+        return mailComposeVC
+    }
+    
+    func mailAlert() -> Void {
+        let alertCV = UIAlertController(title: "Mail Error", message: "No Email Account setup on iPhone", preferredStyle: .Alert)
+        let alert = UIAlertAction(title: "ok", style: .Default, handler: nil)
+        alertCV.addAction(alert)
+        self.presentViewController(alertCV, animated: true, completion: nil)
+        
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("mail Canceled")
+        case MFMailComposeResultSent.rawValue:
+            print("mail send")
+            
+        default:
+            print("Unknown issue")
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +119,7 @@ class SettingsTableViewController: UIViewController {
     
     func updateFonts() -> Void {
         aboutButton.titleLabel?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        feedbackLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        feedbackBtnLabel.titleLabel!.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         securityLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         bestImageQuality.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         APICnt.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)

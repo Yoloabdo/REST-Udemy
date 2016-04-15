@@ -131,7 +131,7 @@ class MoviesTVC: UITableViewController {
     }
     
     
-    // MARK: - Connetivity functions 
+    // MARK: - Connetivity functions
     func getAPICount() {
         
         if let value = defaults.objectForKey("APICNT"){
