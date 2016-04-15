@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoviesTVC: UITableViewController {
+class MoviesTVC: UITableViewController, UISearchResultsUpdating {
 
     var videos = [Videos]()
     
@@ -32,7 +32,11 @@ class MoviesTVC: UITableViewController {
    
     @IBAction func refreshFeed(sender: UIRefreshControl) {
         refreshControl?.endRefreshing()
-        runAPI()
+        if resultSearchController.active {
+            refreshControl?.attributedTitle = NSAttributedString(string: "No refresh Allowed in search")
+        }else {
+            runAPI()
+        }
     }
  
     
@@ -128,6 +132,7 @@ class MoviesTVC: UITableViewController {
     func didLoadData(results: [Videos]) -> Void {
         videos = results
         definesPresentationContext = true
+        resultSearchController.searchResultsUpdater = self
         resultSearchController.dimsBackgroundDuringPresentation = false
         resultSearchController.searchBar.placeholder = "Search Videos"
         resultSearchController.searchBar.searchBarStyle = UISearchBarStyle.Prominent
@@ -174,6 +179,22 @@ class MoviesTVC: UITableViewController {
                 runAPI()
             }
         }
+    }
+    
+    // MARK: -Search 
+    
+    func filterSearch(searchText: String) {
+        filterSearch = videos.filter {
+            videos in
+            return (videos._vArtist?.lowercaseString.containsString(searchText.lowercaseString))!
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        searchController.searchBar.text?.lowercaseString
+        filterSearch(searchController.searchBar.text!)
     }
     
 }
