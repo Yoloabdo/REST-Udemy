@@ -34,12 +34,10 @@ class APIManager {
                     entries = feed["entry"] as? JSONArray
                     {
                         var videos = [Videos]()
-                        var index = 0
-                        for entry in entries {
+                        for (index,entry) in entries.enumerate() {
                             let entry = Videos(data: entry as! JSONDictionary)
                             entry._vrank = index
                             videos.append(entry)
-                            index += 1
                         }
 
                         let proirity = DISPATCH_QUEUE_PRIORITY_HIGH
