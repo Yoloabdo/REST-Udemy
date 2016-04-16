@@ -4,7 +4,9 @@
 //
 //  Created by Abdulrhman  eaita on 4/14/16.
 //  Copyright © 2016 Abdulrhman  eaita. All rights reserved.
-//
+// it lacks the High image Quality option plus security, but it's doable later anytime. 
+// most of the app functionality now is done. about page is left blank as nothing much to say about this app apperantly 
+
 
 import UIKit
 import MessageUI

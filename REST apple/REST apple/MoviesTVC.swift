@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoviesTVC: UITableViewController, UISearchResultsUpdating {
+class MoviesTVC: UITableViewController{
 
     var videos = [Videos]()
     
@@ -181,16 +181,25 @@ class MoviesTVC: UITableViewController, UISearchResultsUpdating {
         }
     }
     
-    // MARK: -Search 
+    // MARK:- Search
     
     func filterSearch(searchText: String) {
         filterSearch = videos.filter {
             videos in
-            return (videos._vArtist?.lowercaseString.containsString(searchText.lowercaseString))!
+            
+            return (videos._vArtist?.lowercaseString.containsString(searchText))! || videos._vname!.lowercaseString.containsString(searchText) || "\(videos._vrank)".lowercaseString.containsString(searchText)
         }
         
         tableView.reloadData()
     }
+    
+  
+    
+}
+
+// MARK:- Extension 
+
+extension MoviesTVC: UISearchResultsUpdating {
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         searchController.searchBar.text?.lowercaseString
